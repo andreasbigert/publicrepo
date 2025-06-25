@@ -1,1 +1,302 @@
- index.html
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Blue Ocean Sales — Tamro</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: white;
+      color: black;
+    }
+    /* Custom scrollbar for accordion */
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+    input[type="checkbox"]:checked ~ .accordion-content {
+      max-height: 1000px; /* large enough to show content */
+    }
+  </style>
+</head>
+<body class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+  <!-- Header -->
+  <header class="flex items-center justify-between py-4 border-b border-gray-300">
+    <div class="flex items-center space-x-4">
+      <img src="https://cdn.sanity.io/images/qfrt6a81/production/7cbe8fd1a930a7f7f7b52272af8d12559dec5ba1-634x103.svg" alt="Tamro Logo" class="h-10" />
+      <nav class="hidden md:flex space-x-6 font-semibold text-sm">
+        <a href="#" class="hover:underline">Vårt erbjudande</a>
+        <a href="#" class="hover:underline">Jobba hos oss</a>
+        <a href="#" class="hover:underline">Om oss</a>
+      </nav>
+    </div>
+    <div class="hidden md:flex space-x-4 text-sm">
+      <a href="#" class="text-blue-700 hover:underline">Sök</a>
+      <a href="#" class="text-blue-700 hover:underline">Logga in</a>
+    </div>
+  </header>
+
+  <!-- Contact Form Section -->
+  <section class="mt-10 max-w-4xl mx-auto">
+    <h1 class="text-2xl font-bold mb-6">Fyll i formuläret för att kontakta</h1>
+    <form class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4" aria-label="Kontaktformulär">
+      <label class="sr-only" for="name">Namn</label>
+      <input type="text" id="name" name="name" placeholder="Namn" class="border border-gray-400 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-black" />
+      <label class="sr-only" for="email">E-post*</label>
+      <input type="email" id="email" name="email" placeholder="E-post*" required class="border border-gray-400 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-black" />
+      <label class="sr-only" for="phone">Telefon</label>
+      <input type="tel" id="phone" name="phone" placeholder="Telefon" class="border border-gray-400 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-black" />
+    </form>
+    <p class="text-sm mb-4">Läs mer om hur vi hanterar dina personuppgifter <a href="/" class="text-blue-700 underline">här</a>.</p>
+    <button type="submit" class="bg-black text-white px-6 py-2 rounded hover:bg-gray-900 transition">Skicka</button>
+  </section>
+
+  <!-- Offerings Overview -->
+  <section class="mt-20 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+    <div>
+      <h2 class="font-bold text-lg mb-2">Säljkårstjänster</h2>
+      <p class="mb-4 text-sm">För bättre kunskap, synlighet och kontroll på apoteken.</p>
+      <a href="#saljkarstjanster" class="text-black border-b-2 border-black font-semibold hover:border-gray-700">Läs mer</a>
+    </div>
+    <div>
+      <h2 class="font-bold text-lg mb-2">Marknadstjänster</h2>
+      <p class="mb-4 text-sm">Unika kanaler för att kommunicera direkt till apoteken.</p>
+      <a href="#marknadstjanster-konsulttjanster" class="text-black border-b-2 border-black font-semibold hover:border-gray-700">Läs mer</a>
+    </div>
+    <div>
+      <h2 class="font-bold text-lg mb-2">Konsulttjänster</h2>
+      <p class="mb-4 text-sm">Strategisk hjälp från idé till lansering och uppföljning på apoteken.</p>
+      <a href="#marknadstjanster-konsulttjanster" class="text-black border-b-2 border-black font-semibold hover:border-gray-700">Läs mer</a>
+    </div>
+  </section>
+
+  <!-- About Blue Ocean Sales -->
+  <section class="mt-20 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+    <div>
+      <h2 class="text-xl font-bold mb-4">Experter på apoteksförsäljning</h2>
+      <p class="mb-4 text-sm leading-relaxed">
+        Blue Ocean Sales grundades i samband med apoteksmarknadens omreglering, med en vision av att erbjuda apoteksspecifika tjänster inom marknadsförings- och försäljning till de nya apotekskedjorna. Idag arbetar vi fortfarande mot samma vision och täcker in omkring 70–75% av Sveriges befolkning med vårt erbjudande.
+      </p>
+      <p class="mb-4 text-sm leading-relaxed">
+        Med bakgrund inom medicin och farmaci erbjuder våra certifierade läkemedelskonsulenter en mängd olika tjänster för apoteksmarknaden. Idag är vi en etablerad partner för några av marknadens största aktörer och fortsätter att driva utvecklingen framåt.
+      </p>
+      <a href="#kontakta-oss" class="text-black font-semibold underline hover:text-gray-700">Kontakta oss</a>
+    </div>
+    <div>
+      <img src="https://cdn.sanity.io/images/qfrt6a81/production/7baedcbf174baa8342bae89c44b1a36a75afe013-677x677.png?w=3840&:q=(80)" alt="Blue Ocean Sales" class="w-full rounded" />
+    </div>
+  </section>
+
+  <!-- Product Journey Section -->
+  <section class="mt-20 max-w-6xl mx-auto">
+    <h2 class="text-xl font-bold mb-4">Vi tar din produkt hela vägen till apotekshyllan</h2>
+    <p class="mb-4 text-sm leading-relaxed">
+      Under fyra säljperioder besöker vårt säljteam de viktigaste apoteken i Sverige. Säljteamet består av fyra läkemedelskonsulenter med medicinsk utbildning med LIF-certifiering, vilket gör att de kan marknadsföra läkemedel och utbilda apotekspersonal på ett kompetent och ansvarsfullt sätt. Vi arbetar med alla olika produkter som apoteken erbjuder.
+    </p>
+    <p class="mb-4 text-sm leading-relaxed">
+      Vårt fokus är att se till att genomföra så kvalitativa apoteksbesök som möjligt. För att säkerställa att vi får tillräckligt med tid av personalen och kan genomföra kvalitativa och uppskattade apoteksbesök förbokar vi alltid besöken i god tid.
+    </p>
+    <a href="#saljkarstjanster" class="font-semibold text-black underline hover:text-gray-700">SÄKRA DIN PLATS PÅ HYLLAN</a>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="mt-20 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+    <blockquote class="text-sm italic">
+      "För att säkerställa Lumenes närvaro på apotek, valde vi samarbeta med Blue Ocean Sales. Deras expertis hjälper oss att hitta rätt på marknaden och stärka vår position av både make-up och hudvård."
+      <footer class="mt-2 font-semibold">LUMENE</footer>
+    </blockquote>
+    <blockquote class="text-sm italic">
+      "Blue Ocean Sales har varit ovärderliga i vår satsning på apoteken. De har hjälpt oss hela vägen – från listning och synlighet till att få personalen att rekommendera våra produkter. Efter lanseringen såg vi dessutom en tydlig försäljningsökning."
+      <footer class="mt-2 font-semibold">BIOGLAN</footer>
+    </blockquote>
+    <blockquote class="text-sm italic">
+      "Tack vare Blue Ocean Sales kunde vi få Rehband in på den svenska apoteksmarknaden. Deras expertis gjorde hela processen smidig, och samarbetet kunde inte ha fungerat bättre!"
+      <footer class="mt-2 font-semibold">REHBRAND</footer>
+    </blockquote>
+  </section>
+
+  <!-- Services Details Accordion -->
+  <section id="saljkarstjanster" class="mt-20 max-w-6xl mx-auto">
+    <h2 class="text-xl font-bold mb-6">Säljkårstjänster</h2>
+    <div class="space-y-4">
+      <div class="border border-gray-300 rounded">
+        <input type="checkbox" id="service1" class="hidden peer" />
+        <label for="service1" class="flex justify-between items-center cursor-pointer p-4 font-semibold">
+          Apoteksbearbetning
+          <span class="text-black peer-checked:rotate-180 transition-transform">&#x25BC;</span>
+        </label>
+        <div class="accordion-content px-4 pb-4 text-sm text-gray-700">
+          <p>Detaljerad information om Apoteksbearbetning.</p>
+        </div>
+      </div>
+      <div class="border border-gray-300 rounded">
+        <input type="checkbox" id="service2" class="hidden peer" />
+        <label for="service2" class="flex justify-between items-center cursor-pointer p-4 font-semibold">
+          Uppföljningsbearbetning - Sales Support Reminder
+          <span class="text-black peer-checked:rotate-180 transition-transform">&#x25BC;</span>
+        </label>
+        <div class="accordion-content px-4 pb-4 text-sm text-gray-700">
+          <p>Detaljerad information om Sales Support Reminder.</p>
+        </div>
+      </div>
+      <div class="border border-gray-300 rounded">
+        <input type="checkbox" id="service3" class="hidden peer" />
+        <label for="service3" class="flex justify-between items-center cursor-pointer p-4 font-semibold">
+          Butikskontroll - Store Check
+          <span class="text-black peer-checked:rotate-180 transition-transform">&#x25BC;</span>
+        </label>
+        <div class="accordion-content px-4 pb-4 text-sm text-gray-700">
+          <p>Detaljerad information om Store Check.</p>
+        </div>
+      </div>
+      <div class="border border-gray-300 rounded">
+        <input type="checkbox" id="service4" class="hidden peer" />
+        <label for="service4" class="flex justify-between items-center cursor-pointer p-4 font-semibold">
+          Kampanjkontroll - Campaign Check
+          <span class="text-black peer-checked:rotate-180 transition-transform">&#x25BC;</span>
+        </label>
+        <div class="accordion-content px-4 pb-4 text-sm text-gray-700">
+          <p>Detaljerad information om Campaign Check.</p>
+        </div>
+      </div>
+      <div class="border border-gray-300 rounded">
+        <input type="checkbox" id="service5" class="hidden peer" />
+        <label for="service5" class="flex justify-between items-center cursor-pointer p-4 font-semibold">
+          Pre-launch studie
+          <span class="text-black peer-checked:rotate-180 transition-transform">&#x25BC;</span>
+        </label>
+        <div class="accordion-content px-4 pb-4 text-sm text-gray-700">
+          <p>Detaljerad information om Pre-launch studie.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Marketing and Consulting Services -->
+  <section id="marknadstjanster-konsulttjanster" class="mt-20 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
+    <div>
+      <h2 class="text-xl font-bold mb-4">Marknadstjänster</h2>
+      <p class="text-sm leading-relaxed">
+        Via vår partner Tamro har du tillgång till kommunikationskanaler för att nå Sveriges apotek – med allt från produktlanseringar till kampanjmaterial. Skicka ut tryckt material via våra läkemedelsleveranser eller med vår säljkår som lämnar över det personligen i butik.
+      </p>
+      <p class="text-sm leading-relaxed">
+        För dig som vill nå ut till rätt apotek finns möjligheten att använda vårt nyhetsbrev eller annonsera i Apoteksportalen – en plattform där över 1 400 apotek dagligen hämtar information. Du väljer målgrupp, budskap och tidpunkt, så sköter vi resten.
+      </p>
+    </div>
+    <div>
+      <h2 class="text-xl font-bold mb-4">Konsulttjänster</h2>
+      <p class="text-sm leading-relaxed">
+        Vi erbjuder både rådgivning och operativt stöd för er som vill lansera eller växa på den svenska apoteksmarknaden. Våra workshops och utbildningar ger dig kunskap om marknaden, säljkanaler, prisstrategier och hur man samarbetar med apotekskedjor – både online och i butik.
+      </p>
+      <p class="text-sm leading-relaxed">
+        Vi kan även agera som er KAM och driva dialogen med inköpare, grossister och apotek. Dessutom hjälper vi till med trade marketing, lanseringsplaner, PR, översättningar och design – allt anpassat till svensk marknad. Oavsett om det gäller ett kortare uppdrag eller ett långsiktigt partnerskap.
+      </p>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section class="mt-20 max-w-6xl mx-auto">
+    <h2 class="text-xl font-bold mb-8">Vi jobbar på Blue Ocean Sales</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12">
+      <div class="text-center">
+        <img src="https://cdn.sanity.io/images/qfrt6a81/production/64ba5daf307350764a133bcae7fbd51b8562717f-1000x853.jpg?w=3840&:q=(80)" alt="Ekaterina Dimitrova" class="mx-auto rounded w-48 h-48 object-cover" />
+        <h3 class="mt-4 font-semibold">Ekaterina Dimitrova</h3>
+        <p class="text-sm">Läkemedelskonsulent Leg Apotekare Region Stockholm norr</p>
+      </div>
+      <div class="text-center">
+        <img src="https://cdn.sanity.io/images/qfrt6a81/production/9ce54f4795f34bc431d41e7bc5a65ae2c217e844-1000x853.jpg?w=3840&:q=(80)" alt="Anita Vilhjalmsson" class="mx-auto rounded w-48 h-48 object-cover" />
+        <h3 class="mt-4 font-semibold">Anita Vilhjalmsson</h3>
+        <p class="text-sm">Läkemedelskonsulent Leg sjuksköterska Region västra Sverige</p>
+      </div>
+      <div class="text-center">
+        <img src="https://cdn.sanity.io/images/qfrt6a81/production/8f4700afa9a387905e4197d1114b961eedad07e6-1000x853.jpg?w=3840&:q=(80)" alt="Gabrielle Holmgren" class="mx-auto rounded w-48 h-48 object-cover" />
+        <h3 class="mt-4 font-semibold">Gabrielle Holmgren</h3>
+        <p class="text-sm">Läkemedelskonsulent Leg apotekare Region södra Sverige</p>
+      </div>
+      <div class="text-center">
+        <img src="https://cdn.sanity.io/images/qfrt6a81/production/536b34ead364f7fbf2045acc182e6b8be13ea184-1000x853.jpg?w=3840&:q=(80)" alt="Michaela Grönman" class="mx-auto rounded w-48 h-48 object-cover" />
+        <h3 class="mt-4 font-semibold">Michaela Grönman</h3>
+        <p class="text-sm">Läkemedelskonsulent Apotekstekniker med receptbehörighet Region Stockholm syd</p>
+      </div>
+    </div>
+    <div class="mt-12 text-center">
+      <h3 class="text-lg font-bold">Christian Berglund</h3>
+      <p class="text-sm mb-1">Head Of Services</p>
+      <p class="text-sm">christian.berglund@tamro.com</p>
+      <p class="text-sm">076-113 61 83</p>
+    </div>
+  </section>
+
+  <!-- Footer with client logos -->
+  <footer class="mt-20 max-w-6xl mx-auto border-t border-gray-300 pt-8 pb-12">
+    <div class="grid grid-cols-3 sm:grid-cols-6 md:grid-cols-8 gap-6 items-center">
+      <a href="https://www.baltex.se/" target="_blank" rel="noopener noreferrer">
+        <img src="https://cdn.sanity.io/images/qfrt6a81/production/e8174364bfe0a2247addf8b8386a4d1f7501978f-1417x382.jpg?w=3840&:q=(80)" alt="Baltex" class="max-h-12 mx-auto" />
+      </a>
+      <a href="https://www.bausch.se/" target="_blank" rel="noopener noreferrer">
+        <img src="https://cdn.sanity.io/images/qfrt6a81/production/d03684ee377816acb8cb17493e5e1858f21e95b2-2560x242.png?w=3840&:q=(80)" alt="Bausch Lomb" class="max-h-12 mx-auto" />
+      </a>
+      <a href="https://bioglan.se/" target="_blank" rel="noopener noreferrer">
+        <img src="https://cdn.sanity.io/images/qfrt6a81/production/6f4e1ef6c1c46d6940d558c02478b0730ee1431b-468x287.png?w=3840&:q=(80)" alt="Bioglan" class="max-h-12 mx-auto" />
+      </a>
+      <a href="https://www.boehringer-ingelheim.com/se" target="_blank" rel="noopener noreferrer">
+        <img src="https://cdn.sanity.io/images/qfrt6a81/production/4e3653b58697c5d5f8207f6eb6c489d97a694bfd-2400x725.png?w=3840&:q=(80)" alt="Boehringer Ingelheim" class="max-h-12 mx-auto" />
+      </a>
+      <a href="https://www.coolderma.com/" target="_blank" rel="noopener noreferrer">
+        <img src="https://cdn.sanity.io/images/qfrt6a81/production/bb8b9130a5b4703fe9000cc6f68bb79dc74fbda9-340x148.png?w=3840&:q=(80)" alt="Cool Derma Company" class="max-h-12 mx-auto" />
+      </a>
+      <a href="https://doktor24.se/" target="_blank" rel="noopener noreferrer">
+        <img src="https://cdn.sanity.io/images/qfrt6a81/production/7ef4438b2d2a5a14fb56276df299f9af807e3b72-800x205.png?w=3840&:q=(80)" alt="Doktor 24" class="max-h-12 mx-auto" />
+      </a>
+      <a href="https://www.drwolffgroup.com/en/" target="_blank" rel="noopener noreferrer">
+        <img src="https://cdn.sanity.io/images/qfrt6a81/production/a9f56b7bd42175b32ef225cc04da015d59bc680d-978x283.jpg?w=3840&:q=(80)" alt="Dr Wolff Group" class="max-h-12 mx-auto" />
+      </a>
+      <a href="/#" aria-label="Dynamic Code">
+        <img src="https://cdn.sanity.io/images/qfrt6a81/production/ffc3fca3be9c594a78ce2ad11ffd4d2e0b8eab61-500x191.png?w=3840&:q=(80)" alt="Dynamic Code" class="max-h-12 mx-auto" />
+      </a>
+      <a href="https://www.galderma.com/sweden" target="_blank" rel="noopener noreferrer">
+        <img src="https://cdn.sanity.io/images/qfrt6a81/production/be393b48aea9fabacdb3c8c36a2b71d4a7bfe169-1340x620.png?w=3840&:q=(80)" alt="Galderma" class="max-h-12 mx-auto" />
+      </a>
+      <a href="https://www.grunenthal.com/" target="_blank" rel="noopener noreferrer">
+        <img src="https://cdn.sanity.io/images/qfrt6a81/production/36bcc532944e6f3e3987cd85ca87fd8e57fe6db9-790x405.png?w=3840&:q=(80)" alt="Grunenthal.com" class="max-h-12 mx-auto" />
+      </a>
+      <a href="https://www.leo-pharma.com/" target="_blank" rel="noopener noreferrer">
+        <img src="https://cdn.sanity.io/images/qfrt6a81/production/7d3fa656aaaa807a75bc63fb9a0de14dc03b0739-1200x922.png?w=3840&:q=(80)" alt="Leo" class="max-h-12 mx-auto" />
+      </a>
+      <a href="https://se.lumene.com/" target="_blank" rel="noopener noreferrer">
+        <img src="https://cdn.sanity.io/images/qfrt6a81/production/9bd01489a33f768ba0fae7ea1fc54e77d09d190f-1280x720.png?w=3840&:q=(80)" alt="Lumene" class="max-h-12 mx-auto" />
+      </a>
+      <a href="https://www.niconovum.se/" target="_blank" rel="noopener noreferrer">
+        <img src="https://cdn.sanity.io/images/qfrt6a81/production/0bffcbc76c3bad2d02f7b000f831f28d59eaf91d-1179x305.png?w=3840&:q=(80)" alt="Niconovum" class="max-h-12 mx-auto" />
+      </a>
+      <a href="https://www.consumerhealth.se/" target="_blank" rel="noopener noreferrer">
+        <img src="https://cdn.sanity.io/images/qfrt6a81/production/ad7e1824a433b51a625a717e20caafeb2c50deaa-672x385.png?w=3840&:q=(80)" alt="Nordic Consumer Health" class="max-h-12 mx-auto" />
+      </a>
+      <a href="https://www.orifarm.com/our-business/sweden/" target="_blank" rel="noopener noreferrer">
+        <img src="https://cdn.sanity.io/images/qfrt6a81/production/6251bcbadd40fc1ee35dcb758ebab8cc342efefd-1046x233.png?w=3840&:q=(80)" alt="Orifarm" class="max-h-12 mx-auto" />
+      </a>
+      <a href="https://us.pg.com/" target="_blank" rel="noopener noreferrer">
+        <img src="https://cdn.sanity.io/images/qfrt6a81/production/98ae770c51dce0e6adf8778350835d242f15a048-1200x523.png?w=3840&:q=(80)" alt="P&G" class="max-h-12 mx-auto" />
+      </a>
+      <a href="https://www.pfizer.se/" target="_blank" rel="noopener noreferrer">
+        <img src="https://cdn.sanity.io/images/qfrt6a81/production/5d6e519219db7ed2bcf73b0dcd4e8b7a3c5cd78a-1920x1400.png?w=3840&:q=(80)" alt="Pfizer" class="max-h-12 mx-auto" />
+      </a>
+      <a href="https://www.orionpharma.se/" target="_blank" rel="noopener noreferrer">
+        <img src="https://cdn.sanity.io/images/qfrt6a81/production/c817dee4ddeafb3232ee1ba6c94cc72273b1f188-500x198.png?w=3840&:q=(80)" alt="Orion Pharma" class="max-h-12 mx-auto" />
+      </a>
+      <a href="https://www.novartis.com" target="_blank" rel="noopener noreferrer">
+        <img src="https://cdn.sanity.io/images/qfrt6a81/production/0b8d62a66e3a910a47a634a4f019b6bd9cb12405-1184x589.png?w=3840&:q=(80)" alt="Novartis Sandoz" class="max-h-12 mx-auto" />
+      </a>
+      <a href="https://www.avogel.se/se/" target="_blank" rel="noopener noreferrer">
+        <img src="https://cdn.sanity.io/images/qfrt6a81/production/2ef4bf9e69dc855201b9bbdcde5ce6dbf5664c6b-300x134.png?w=3840&:q=(80)" alt="A. Vogel" class="max-h-12 mx-auto" />
+      </a>
+    </div>
+  </footer>
+
+</body>
+</html>
