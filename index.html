@@ -144,14 +144,109 @@
     </style>
 </head>
 <body class="text-slate-300 antialiased">
-
     <!-- Main Container -->
     <div class="container mx-auto px-4 py-8 md:py-12">
-
         <!-- Main Header -->
         <header class="text-center mb-8">
             <h1 class="text-5xl md:text-6xl font-bold text-white mb-4">Motorica HR Directory</h1>
             <!-- Submenu Navigation -->
             <nav class="flex justify-center space-x-2 md:space-x-4 bg-gray-900/50 p-2 rounded-xl max-w-md mx-auto border border-gray-700">
                 <button id="sailing-btn" class="nav-button active w-full text-center py-2 px-4 rounded-lg text-slate-300 hover:bg-gray-700">Sailing Trip</button>
-                <button id="vacation-btn" class="nav-butto
+                <button id="vacation-btn" class="nav-button w-full text-center py-2 px-4 rounded-lg text-slate-300 hover:bg-gray-700">Vacation Policy</button>
+            </nav>
+        </header>
+        <!-- Content Sections -->
+        <main>
+            <!-- Sailing Trip Content -->
+            <div id="sailing-content">
+                <div class="max-w-4xl mx-auto bg-gray-900/50 rounded-2xl shadow-lg p-6 md:p-10 border border-gray-700">
+                    <header class="text-center mb-8">
+                        <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">Motorican Sailors</h1>
+                        <p class="text-lg md:text-xl text-blue-400">Packing List: Beckholmen to Sandhamn</p>
+                        <img src="Constantia-under-sails-Windseeker.jpg" alt="Sailing ship Constantia under full sail on a sunny day" class="my-8 w-full h-auto rounded-xl shadow-lg mx-auto">
+                        <img src="Constantia-under-sails-Windseeker.jpg" alt="Sailing ship Constantia under full sail on a sunny day" class="mt-8 w-full h-auto rounded-xl shadow-lg mx-auto">
+                        <img src="ChatGPT Image Aug 15, 2025, 06_04_42 PM.jpg" alt="Motorican Sailors crew portraits" class="mt-4 w-full h-auto rounded-xl shadow-lg mx-auto">
+                    </header>
+                    <div class="bg-gray-900 rounded-lg p-6 mb-8 text-center text-lg">
+                        <p>Hi all Motorican Sailors!</p>
+@@ -258,7 +259,7 @@ <h3 class="text-xl font-bold text-white mb-4">Saving Your Days</h3>
+                                </div>
+                                <div class="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-8">
+                                    <div class="card text-center flex flex-col justify-center"><div class="text-6xl mb-4">🗓️</div><h3 class="text-xl font-bold text-white mb-2">Forced Vacation Notice</h3><p class="text-gray-400 mb-4">If an employer needs to order you to take vacation, they must provide at least:</p><div class="stat-number">2</div><p class="text-3xl font-bold text-white">Months' Notice</p></div>
+                                    <div class="card text-center flex flex-col justify-center"><div class="text-6xl mb-4">☀️</div><h3 class="text-xl font-bold text-white mb-2">Summer Leave Right</h3><p class="text-gray-400 mb-4">All employees are entitled to a consecutive vacation period during June-August of at least:</p<div class="stat-number">4</div><p class="text-3xl font-bold text-white">Weeks</p></div>
+                                    <div class="card text-center flex flex-col justify-center"><div class="text-6xl mb-4">☀️</div><h3 class="text-xl font-bold text-white mb-2">Summer Leave Right</h3><p class="text-gray-400 mb-4">All employees are entitled to a consecutive vacation period during June-August of at least:</p><div class="stat-number">4</div><p class="text-3xl font-bold text-white">Weeks</p></div>
+                                </div>
+                            </div>
+                        </section>
+                    </main>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script>
+        // --- Navigation Logic ---
+        const sailingBtn = document.getElementById('sailing-btn');
+        const vacationBtn = document.getElementById('vacation-btn');
+        const sailingContent = document.getElementById('sailing-content');
+        const vacationContent = document.getElementById('vacation-content');
+        
+        // --- Chart Logic ---
+        let chartInitialized = false;
+        function initializeChart() {
+            if (chartInitialized) return; // Prevent re-initialization
+            
+            const ctx = document.getElementById('savingDaysChart').getContext('2d');
+            const savingDaysChart = new Chart(ctx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Days to Use (or lose)', 'Savable Days'],
+                    datasets: [{
+                        label: 'Vacation Days Breakdown',
+                        data: [20, 10],
+                        backgroundColor: ['#3b82f6', '#1e40af'], // blue-500, blue-800
+                        borderColor: '#161B22',
+                        borderWidth: 4,
+                        hoverOffset: 8
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    cutout: '60%',
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: { color: '#E0E0E0', font: { size: 14, family: 'Satoshi' } }
+                        },
+                        tooltip: {
+                            backgroundColor: '#0D1117',
+                            titleColor: '#FFFFFF',
+                            bodyColor: '#E0E0E0',
+                            titleFont: { size: 16, weight: 'bold', family: 'Satoshi' },
+                            bodyFont: { size: 14, family: 'Satoshi' },
+                            padding: 12,
+                            cornerRadius: 8,
+                            displayColors: false
+                        }
+                    }
+                }
+            });
+            chartInitialized = true;
+        }
+        sailingBtn.addEventListener('click', () => {
+            sailingContent.classList.remove('hidden');
+            vacationContent.classList.add('hidden');
+            sailingBtn.classList.add('active');
+            vacationBtn.classList.remove('active');
+        });
+        vacationBtn.addEventListener('click', () => {
+            vacationContent.classList.remove('hidden');
+            sailingContent.classList.add('hidden');
+            vacationBtn.classList.add('active');
+            sailingBtn.classList.remove('active');
+            // Initialize the chart when the tab is clicked for the first time
+            initializeChart();
+        });
+    </script>
+</body>
+</html>
